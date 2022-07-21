@@ -1,0 +1,62 @@
+<h1 style="text-align:center">Sample Reactive Form</h1> <br>
+<div class="card" style="width: 50rem; height: auto;">
+    
+<div class="card-body">
+        
+<form class="row g-3" [formGroup]="userForm">
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label" >Email</label>
+      <input type="email" formControlName="email" class="form-control" id="email" name="email">
+      <span *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.touched ">Pls Enter email!</span>
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" name="password" id="inputPassword4">
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" class="form-control" formControlName="inputAddress" name="inputAddress" id="inputAddress" placeholder="1234 Main St">
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input type="text" class="form-control" formControlName="inputAddress2" name="inputAddress2" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" formControlName="inputCity" name="inputCity" class="form-control" id="inputCity">
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" formControlName="inputState" name="inputState" class="form-select">
+        <option selected *ngFor="let s of state">{{s.name}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" formControlName="inputZip" name="inputZip" class="form-control" id="inputZip">
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" formControlName="gridCheck" name="gridCheck" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+
+  </form>
+    </div>
+    </div>
+
